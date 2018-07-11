@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student" class="com.model.s07.Student" scope="singleton"> <!--  공유함: 가리키는 곳이 같음 -->
+		<property name="name" value="오드리" />
+		<property name="age" value="28" />
+	</bean>
+	
+	<bean id="act" class="com.model.s07.Student" scope="prototype"> <!-- act이름으로 호출할때마다 객체새로 만들어 사용: 가리키는 주소가 다름 -->
+		<property name="name" value="리설주" />
+		<property name="age" value="33" />
+	</bean>	
+</beans>
