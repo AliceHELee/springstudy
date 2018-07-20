@@ -74,6 +74,20 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!--  AOP  -->
+		
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver WEAVER-->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.9.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt RUNTIME-->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <version>1.9.1</version>
+		</dependency>
+		
 	</dependencies>	
 </project>

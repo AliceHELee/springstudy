@@ -15,5 +15,5 @@ public class ApplicationConfigDev {
 		info.setPortNum("80");		
 		return info;
 	}
-
+}
 }
