@@ -14,6 +14,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 
+
 public class BDao {
 	
 	DataSource dataSource;
@@ -70,7 +71,7 @@ public class BDao {
 
 	public BDto contentView(String strID) {
 		
-		//upHit(strID);
+		upHit(strID);
 		BDto dto = null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -127,9 +128,9 @@ public class BDao {
 			connection = dataSource.getConnection();
 			String query = "update mvc_board set bHit = bHit + 1 where bId = ?";
 			preparedStatement = connection.prepareStatement(query);
-			preparedStatement.setString(1, bId);
-			
-			int rn = preparedStatement.executeUpdate();
+			//preparedStatement.setString(1, bId);
+			preparedStatement.setInt(1, Integer.parseInt(bId));		//int와 string 둘다 문제는 안됨	
+			int rn = preparedStatement.executeUpdate();		// rn: 디버깅용
 			
 		} catch (Exception e) { e.printStackTrace(); } 
 		finally {
@@ -139,6 +140,8 @@ public class BDao {
 			} catch (Exception e) { e.printStackTrace(); }
 		}
 	}
+
+ 
 
 	public void write(String bName, String bTitle, String bContent) {
 		Connection connection = null;
@@ -211,7 +214,7 @@ public class BDao {
 	}
 
 	public void reply(String bId, String bName, String bTitle, String bContent, String bGroup, String bStep, String bIndent) {
-//		replyShape(bGroup, bStep);
+		replyShape(bGroup, bStep);
 		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
